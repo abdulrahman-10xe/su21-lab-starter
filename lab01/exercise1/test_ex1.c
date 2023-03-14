@@ -40,6 +40,14 @@ int main(int argc, char **argv) {
 
     /* TODO: Think of a scenario that is not tested by the current test cases. Create one additional test case to test this scenario. */
 
+    DNA_sequence dna_seq_3;
+    strcpy(dna_seq_3.sequence, "ABCDEFGFEDCBA");
+    compute_nucleotide_occurrences(&dna_seq_3);
+    assert(dna_seq_3.A_count == 2);
+    assert(dna_seq_3.C_count == 2);
+    assert(dna_seq_3.G_count == 1);
+    assert(dna_seq_3.T_count == 0);
+
     printf("Congrats! If you have made it to this line, your Part 2 Test cases are all passing!\n");
 
     return 0;
