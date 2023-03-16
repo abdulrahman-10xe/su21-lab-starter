@@ -7,7 +7,7 @@ int main(int argc, char **argv) {
     printf("Running tests...\n\n");
 
     Node *head = NULL;
-
+    
     /*********** reverse_list test ***********/
     reverse_list(&head);
     for (int i = 0; i < 5; ++i) {
