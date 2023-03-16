@@ -80,4 +80,7 @@ void add_to_back(Node **head, int data) {
         prev = curr;
     }
     prev->next = new_node;
+    if (*head == NULL) {
+	*head = new_node;
+    }
 }
