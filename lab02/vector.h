@@ -42,6 +42,8 @@ typedef struct vector_t vector_t;
 
 /* Create a new vector */
 vector_t *vector_new();
+vector_t *bad_vector_new();
+vector_t also_bad_vector_new();
 
 /* Free up the memory allocated for the passed vector */
 void vector_delete(vector_t *v);

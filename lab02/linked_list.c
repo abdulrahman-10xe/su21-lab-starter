@@ -77,12 +77,15 @@ void add_to_back(Node **head, int data) {
         return;
     }
     Node *new_node = create_node(data);
-    Node *prev = malloc(sizeof(struct Node)); 
+    Node *prev; 
     for (Node *curr = *head; curr != NULL; curr = curr->next) {
         prev = curr;
     }
-    prev->next = new_node;
     if (*head == NULL) {
 	*head = new_node;
+    }
+    else
+    {
+    	prev->next = new_node;
     }
 }
