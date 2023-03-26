@@ -1,7 +1,7 @@
 CC=gcc
 CFLAGS=-Wall -std=c99 -g
 
-all: linked_list bit_ops vector
+all: linked_list bit_ops vector struct
 
 linked_list: linked_list.o test_linked_list.o
 	$(CC) -o linked_list linked_list.o test_linked_list.o
@@ -29,6 +29,15 @@ vector.o: vector.c vector.h
 
 test_vector.o: test_vector.c vector.h
 	$(CC) $(CFLAGS) -c test_vector.c
+	
+struct: struct.o test_struct.o
+	$(CC) -o struct struct.o test_struct.o
+
+struct.o: struct.c struct.h
+	$(CC) $(CFLAGS) -c struct.c
+
+test_struct.o: test_struct.c struct.h
+	$(CC) $(CFLAGS) -c test_struct.c
 
 clean:
-	rm linked_list linked_list.o test_linked_list.o bit_ops bit_ops.o test_bit_ops.o vector vector.o test_vector.o
+	rm linked_list linked_list.o test_linked_list.o bit_ops bit_ops.o test_bit_ops.o vector vector.o test_vector.o struct struct.o test_struct.o
